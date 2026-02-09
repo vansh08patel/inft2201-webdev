@@ -1,6 +1,11 @@
-CREATE TABLE IF NOT EXISTS demo_ping(
+CREATE TABLE IF NOT EXISTS mail (
     id SERIAL PRIMARY KEY,
-    MESSAGE text not null
+    subject TEXT NOT NULL,
+    body TEXT NOT NULL
 );
 
-INSERT INTO demo_ping (MESSAGE)value ('Postgres is up!');
+
+
+/*INSERT INTO mail (subject, body)
+VALUES ('Alice', 'Hello.')
+ON CONFLICT DO NOTHING;*/

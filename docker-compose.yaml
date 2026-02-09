@@ -8,6 +8,11 @@ services:
       - ./html:/var/www/html
     depends_on:
       - db_prod
+    environment:
+      DB_PROD_HOST: db_prod
+      DB_PROD_NAME: prod
+      DB_USER: user
+      DB_PASS: pass
     networks:
       - inft2201_network
 
@@ -21,7 +26,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./init-prob:/docker-environment-initdb.d
+      - ./init-prod:/docker-entrypoint-initdb.d
+
     networks:
       - inft2201_network
 
